@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login_Page</title>
+    <style>
+        #div{
+            border: 3px solid;
+            height: 300px;
+            width: 300px;
+        }
+        #login{
+           margin-left: 30%;
+           cursor: pointer;
+           background-color: beige;
+           height: 40px;
+           width: 100px;
+        }
+        #reg{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <form action="">
+        <div id="div">
+            <h1 id="reg">login_Form</h1> <br>
+           &nbsp; &nbsp;Username: <input type="text" id="username" name="username" placeholder="enter username"> <br><br>
+           &nbsp; &nbsp;Password: <input type="password"id="password" name="password" placeholder="enter password"> <br><br>
+            <button id="login">Login</button>
+        </div>
+    </form>
+    <script>
+        let login = document.getElementById("login")
+        let username = document.getElementById("username")
+        let password = document.getElementById("password")
+        login.addEventListener("click",(e)=>{
+            e.preventDefault()
+            console.log(username.value);
+            console.log(password.value);
+            let localUsername = localStorage.getItem("username")
+            let localPassword = localStorage.getItem("password")
+            if(username.value == localUsername && password.value == localPassword)
+            {
+                window.open("./welcome.html")
+            }
+        })
+    </script>
+</body>
+</html>
